@@ -6,7 +6,7 @@ import HorizontalScrollbar from './HorizontalScrollbar';
 
 const SearchExercises = ({ setExercises, bodyPart, setBodyPart}) => {
 
-  const URL = "https://exercisedb.p.rapidapi.com/exercises";
+  // const URL = "https://exercisedb.p.rapidapi.com/exercises";
 
   const[search, setSearch] = useState('');
   const[bodyParts, setBodyParts] = useState([]);
