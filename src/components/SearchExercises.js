@@ -26,13 +26,15 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart}) => {
       const exerciseData = await fetchData("https://exercisedb.p.rapidapi.com/exercises", exerciseOptions);
       console.log(exerciseData);
 
-      const searchedExercises = exerciseData.filter( (exercise) => exercise.name.toLowerCase().inlcudes(search)
-      || exercise.target.toLowerCase().inlcudes(search)
-      || exercise.equipment.toLowerCase().inlcudes(search)
-      || exercise.bodyPart.toLowerCase().inlcudes(search)
+      const searchedExercises = exerciseData.filter( 
+        (item) => item.name.toLowerCase().includes(search)
+               || item.target.toLowerCase().includes(search)
+               || item.equipment.toLowerCase().includes(search)
+               || item.bodyPart.toLowerCase().includes(search),
       );
 
-      setSearch ('')  ;
+      window.scrollTo({ top:1800, left: 100, behavior: 'smooth'});
+      setSearch ('');
       setExercises(searchedExercises);                               
     }
 
@@ -57,7 +59,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart}) => {
           backgroundColor: '#fff',
           borderRadius:'40px'
 
-        }} height="76px" value={search} onChange={(e) => setSearch(e.target.value.toLocaleLowerCase())} placeholder="Search Exercises" type="text"/>
+        }} height="76px" value={search} onChange={(e) => setSearch(e.target.value.toLowerCase())} placeholder="Search Exercises" type="text"/>
         <Button className="search-btn" 
         sx={{
           width: { lg: '175px', xs: '80px'},

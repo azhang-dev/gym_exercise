@@ -6,7 +6,7 @@ import { exerciseOptions, fetchData } from '../utils/fetchData';
 
 
 const Exercises = ({exercises, setExercises, bodyPart}) => {
-  console.log(exercises);
+  // console.log(exercises);
 
   return (
 
@@ -19,7 +19,7 @@ const Exercises = ({exercises, setExercises, bodyPart}) => {
       <Stack direction="row" sx={{ gap: { lg: '110px', xs: '50px'}}}
       flexwrap="wrap" justifyContent="center">
         {exercises.map((exercise,index) => (
-          <p>{exercise.name}</p>
+          <p key={exercise.name.toString()}>{exercise.name}</p>
         ))}
       </Stack>
     
